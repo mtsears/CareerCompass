@@ -1,25 +1,8 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Caribbean Career Compass</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap');
-:root {
-  --gold:#FFD700;--green:#1A7A3C;--teal:#00A896;--orange:#FF6B35;--red:#CE1126;--purple:#7B2D8B;--navy:#0D1B2A;--cream:#FFFBF0;
-}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,var(--navy) 0%,#1a3a5c 50%,var(--green) 100%);min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:2rem 1rem 3rem;}
-.cc-wrap{font-family:'Nunito',sans-serif;background:var(--cream);border-radius:16px;overflow:hidden;border:1px solid #e0e0e0;max-width:780px;width:100%;}
-=======
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap');
 :root{--gold:#FFD700;--green:#1A7A3C;--teal:#00A896;--orange:#FF6B35;--red:#CE1126;--purple:#7B2D8B;--navy:#0D1B2A;--cream:#FFFBF0;}
 .cc-wrap{font-family:'Nunito',sans-serif;background:var(--cream);border-radius:16px;overflow:hidden;border:1px solid #e0e0e0;max-width:780px;margin:0 auto;}
->>>>>>> gh-pages
 .cc-header{background:linear-gradient(135deg,var(--navy) 0%,#1a3a5c 60%,#1a7a3c 100%);text-align:center;padding:2rem 1rem 1.5rem;}
 .cc-header h1{font-family:'Nunito',sans-serif;font-size:clamp(1.4rem,4vw,2.2rem);font-weight:900;color:var(--gold);margin:.4rem 0 .3rem;text-shadow:1px 1px 3px rgba(0,0,0,.4);}
 .cc-header p{font-size:.9rem;color:#b8d4e8;margin:0;}
@@ -62,65 +45,6 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,var(--nav
 .back-btn:hover{background:var(--teal);color:white;}
 .results-hdr-inline h2{font-size:1.3rem;font-weight:900;color:var(--navy);margin:0;}
 .results-hdr-inline p{font-size:.8rem;color:#666;margin:0;}
-<<<<<<< HEAD
-.share-btn{font-size:.82rem;font-weight:800;color:white;background:var(--navy);border:none;border-radius:50px;padding:.35rem .9rem;cursor:pointer;font-family:'Nunito',sans-serif;transition:all .15s;}
-.share-btn:hover{opacity:.85;}
-.share-toast{font-size:.78rem;color:var(--green);font-weight:700;text-align:center;margin-top:.4rem;min-height:1.2rem;}
-.loading{text-align:center;padding:2.5rem 1rem;}
-.spinner{width:44px;height:44px;border:4px solid #eee;border-top-color:var(--teal);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto .8rem;}
-@keyframes spin{to{transform:rotate(360deg);}}
-.error-box{background:#fff0f0;border:1.5px solid #f5c1c1;border-radius:12px;padding:1.2rem;text-align:center;margin:1rem 0;}
-.error-box p{color:var(--red);font-weight:700;font-size:.9rem;margin-bottom:.8rem;}
-.error-detail{font-size:.75rem;color:#999;font-weight:600;margin-bottom:.8rem;}
-.retry-btn{font-size:.85rem;font-weight:800;font-family:'Nunito',sans-serif;color:white;background:var(--red);border:none;border-radius:50px;padding:.5rem 1.2rem;cursor:pointer;}
-.retry-btn:hover{opacity:.85;}
-footer{text-align:center;padding:1rem;font-size:.75rem;color:rgba(255,255,255,.5);background:var(--navy);}
-@media(max-width:480px){.info-grid{grid-template-columns:1fr;}.info-box.full{grid-column:span 1;}}
-</style>
-</head>
-<body>
-
-<div class="cc-wrap" role="main" aria-label="Caribbean Career Compass">
-  <div class="cc-header">
-    <div style="font-size:2.2rem" aria-hidden="true">🧭</div>
-    <h1>Caribbean Career Compass</h1>
-    <p>Pick your strengths — we'll find real careers waiting for you in the region 🌴</p>
-  </div>
-  <svg class="cc-wave" viewBox="0 0 1440 36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <path fill="#FFFBF0" d="M0,18 C360,36 1080,0 1440,18 L1440,36 L0,36 Z"/>
-  </svg>
-
-  <div class="cc-body">
-    <div id="picker">
-      <div class="section-label">Step 1 of 2</div>
-      <div class="pick-title" id="pick-heading">What are you good at? Pick all that feel like you 👇</div>
-      <div class="skills-grid" id="grid" role="group" aria-labelledby="pick-heading"></div>
-      <p class="counter">You've picked <span id="cnt" aria-live="polite">0</span> skills</p>
-      <button class="cta-btn" id="find-btn" disabled onclick="findCareers()">🔍 Find My Career Path</button>
-    </div>
-
-    <div class="loading" id="loading" style="display:none" aria-live="polite" aria-label="Loading career results">
-      <div class="spinner" aria-hidden="true"></div>
-      <p style="font-weight:700;color:#555;font-size:.95rem">Searching the Caribbean for your perfect path... ✨</p>
-    </div>
-
-    <div id="error-area" style="display:none">
-      <div class="error-box" role="alert">
-        <p>⚠ Something went wrong. Please try again.</p>
-        <div class="error-detail" id="error-detail"></div>
-        <button class="retry-btn" onclick="retryFind()">↺ Try Again</button>
-      </div>
-    </div>
-
-    <div id="results" style="display:none" aria-live="polite">
-      <div class="results-nav">
-        <button class="back-btn" onclick="goBack()" aria-label="Back to skill picker">← Change skills</button>
-        <div class="results-hdr-inline">
-          <h2>🎉 Your Career Matches</h2>
-          <p>Based on your picks — here's what's waiting for you</p>
-        </div>
-        <button class="share-btn" onclick="shareResults()" aria-label="Copy results summary">🔗 Share</button>
-=======
 .share-btn{font-size:.82rem;font-weight:800;color:white;background:var(--navy);border:none;border-radius:50px;padding:.35rem .9rem;cursor:pointer;font-family:'Nunito',sans-serif;}
 .share-btn:hover{opacity:.85;}
 .share-toast{font-size:.78rem;color:var(--green);font-weight:700;text-align:center;margin-top:.4rem;min-height:1.2rem;}
@@ -152,7 +76,6 @@ footer{text-align:center;padding:1rem;font-size:.75rem;color:rgba(255,255,255,.5
           <p id="theme-line" style="font-size:.8rem;color:#666;margin:0;"></p>
         </div>
         <button class="share-btn" onclick="shareResults()">&#128279; Share</button>
->>>>>>> gh-pages
       </div>
       <div class="share-toast" id="share-toast" aria-live="polite"></div>
       <div id="cards"></div>
@@ -160,34 +83,6 @@ footer{text-align:center;padding:1rem;font-size:.75rem;color:rgba(255,255,255,.5
   </div>
 </div>
 
-<<<<<<< HEAD
-<footer>Caribbean Career Compass · STEAM Edition · Powered by AI</footer>
-
-<script>
-const SKILLS=[
-  ["🔢","I'm great with numbers"],["💡","I love solving problems"],["🎨","I'm creative and artistic"],
-  ["🌿","I care about nature & the environment"],["🤝","I enjoy helping people"],["💻","I love computers & tech"],
-  ["🔬","I'm curious about science"],["🏗️","I like building things"],["🗣️","I communicate well"],
-  ["📊","I like organising & analysing data"],["⚡","I'm interested in energy & electricity"],["🌊","I'm drawn to the ocean & marine life"],
-  ["🛠️","I like fixing and designing things"],["🤖","I'm fascinated by AI & robotics"],["🌍","I care about climate & sustainability"],
-  ["🏥","I want to work in health & medicine"],["📐","I like maths and geometry"],["🚀","I dream big and think futuristically"],
-  ["🧠","I enjoy learning how the mind works"],["🌱","I'm interested in farming & food systems"]
-];
-
-const sel=new Set();
-let lastChosen=[];
-let lastResults=[];
-
-function buildGrid(){
-  const g=document.getElementById('grid');
-  SKILLS.forEach((s,i)=>{
-    const b=document.createElement('button');
-    b.className='skill-chip';
-    b.innerHTML=s[0]+' '+s[1];
-    b.setAttribute('role','checkbox');
-    b.setAttribute('aria-checked','false');
-    b.setAttribute('aria-label',s[1]);
-=======
 <script>
 const SKILLS=[
   {label:"I'm great with numbers",       theme:"numbers"},
@@ -372,7 +267,6 @@ function buildGrid(){
     b.setAttribute('role','checkbox');
     b.setAttribute('aria-checked','false');
     b.setAttribute('aria-label',s.label);
->>>>>>> gh-pages
     b.onclick=()=>{
       if(sel.has(i)){sel.delete(i);b.classList.remove('sel');b.setAttribute('aria-checked','false');}
       else{sel.add(i);b.classList.add('sel');b.setAttribute('aria-checked','true');}
@@ -383,78 +277,6 @@ function buildGrid(){
   });
 }
 
-<<<<<<< HEAD
-async function findCareers(){
-  lastChosen=[...sel].map(i=>SKILLS[i][1]);
-  showLoading();
-
-  const prompt=`You are a Caribbean career guidance expert. A student selected these skills/interests: ${lastChosen.join('; ')}.
-
-Suggest exactly 3 realistic STEAM career paths available in CARICOM countries.
-
-Return ONLY a raw JSON array — no markdown fences, no preamble, no trailing text. Start your response with [ and end with ].
-
-Each object:
-{
-  "title": "Career title",
-  "icon": "one emoji",
-  "tagline": "one punchy sentence",
-  "match": "Strong Match or Good Match",
-  "blurb": "2-3 encouraging sentences with Caribbean context",
-  "why_match": "One sentence starting with Your interest in... connecting the student skills to this career",
-  "cxc_subjects": ["up to 4 short CXC subject names"],
-  "universities": ["Degree — Institution (Country)" using only real CARICOM universities: UWI St. Augustine, UWI Cave Hill, UWI Mona, University of Guyana, UTech Jamaica, University of Belize],
-  "salary_range": "USD $XX,000–$XX,000/yr",
-  "global_workers": "Approx X million workers worldwide",
-  "caricom_note": "One sentence on demand in CARICOM"
-}`;
-
-  try{
-    const res=await fetch("https://api.anthropic.com/v1/messages",{
-      method:"POST",
-      headers:{
-        "Content-Type":"application/json",
-        "anthropic-version":"2023-06-01",
-        "anthropic-dangerous-direct-browser-access":"true"
-      },
-      body:JSON.stringify({
-        model:"claude-sonnet-4-20250514",
-        max_tokens:1500,
-        messages:[{role:"user",content:prompt}]
-      })
-    });
-
-    if(!res.ok){
-      const errData=await res.json().catch(()=>({}));
-      throw new Error(`API ${res.status}: ${errData?.error?.message||res.statusText}`);
-    }
-
-    const data=await res.json();
-    const text=data.content.map(b=>b.text||'').join('');
-    const jsonStart=text.indexOf('[');
-    const jsonEnd=text.lastIndexOf(']');
-    if(jsonStart===-1||jsonEnd===-1) throw new Error('No JSON array found in response');
-    lastResults=JSON.parse(text.slice(jsonStart,jsonEnd+1));
-    renderResults(lastResults);
-  }catch(e){
-    document.getElementById('loading').style.display='none';
-    document.getElementById('error-detail').textContent=e.message||'';
-    document.getElementById('error-area').style.display='block';
-    console.error('Career Compass error:',e);
-  }
-}
-
-function retryFind(){
-  document.getElementById('error-area').style.display='none';
-  findCareers();
-}
-
-function showLoading(){
-  document.getElementById('picker').style.display='none';
-  document.getElementById('loading').style.display='block';
-  document.getElementById('error-area').style.display='none';
-  document.getElementById('results').style.display='none';
-=======
 function findCareers(){
   const counts={tech:0,engineering:0,science:0,numbers:0,people:0,environment:0,creative:0};
   [...sel].forEach(i=>counts[SKILLS[i].theme]++);
@@ -506,83 +328,15 @@ function renderResults(careers,singleTheme){
   });
   document.getElementById('picker').style.display='none';
   document.getElementById('results').style.display='block';
->>>>>>> gh-pages
 }
 
 function goBack(){
   document.getElementById('results').style.display='none';
   document.getElementById('picker').style.display='block';
-<<<<<<< HEAD
-  document.getElementById('share-toast').textContent='';
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-
-const ACCENTS=['#00A896','#FF6B35','#7B2D8B'];
-
-function renderResults(careers){
-  document.getElementById('loading').style.display='none';
-  const c=document.getElementById('cards');
-  c.innerHTML='';
-  careers.forEach((career,i)=>{
-    const cxc=(career.cxc_subjects||[]).map(s=>`<span class="tag cxc" title="${s}">${s}</span>`).join('');
-    const uni=(career.universities||[]).map(u=>`<span class="tag uni">${u}</span>`).join('');
-    const div=document.createElement('div');
-    div.className='career-card';
-    div.setAttribute('role','article');
-    div.setAttribute('aria-label',career.title+' career card');
-    div.innerHTML=`
-      <div class="card-accent" style="background:${ACCENTS[i]}" aria-hidden="true"></div>
-      <div class="card-header">
-        <div class="card-icon" aria-hidden="true">${career.icon||'🎓'}</div>
-        <div>
-          <div class="card-title">${career.title}</div>
-          <div class="card-tagline">${career.tagline}</div>
-        </div>
-        <div class="match-badge" aria-label="${career.match}">⭐ ${career.match}</div>
-      </div>
-      <div class="card-body">
-        <div class="why-match" role="note">🔍 ${career.why_match||''}</div>
-        <div class="blurb">${career.blurb}</div>
-        <div class="info-grid">
-          <div class="info-box hl"><div class="lbl">💰 Salary (global)</div><div class="val">${career.salary_range}</div></div>
-          <div class="info-box"><div class="lbl">🌍 Workers worldwide</div><div class="val">${career.global_workers}</div></div>
-          <div class="info-box full"><div class="lbl">🌴 In CARICOM</div><div class="val">${career.caricom_note}</div></div>
-        </div>
-        <div class="info-box" style="margin-bottom:.6rem"><div class="lbl">📚 CXC subjects to focus on</div><div class="tags-row" role="list">${cxc}</div></div>
-        <div class="info-box"><div class="lbl">🏫 Regional universities</div><div class="tags-row" role="list">${uni}</div></div>
-      </div>`;
-    c.appendChild(div);
-  });
-  document.getElementById('results').style.display='block';
-=======
->>>>>>> gh-pages
 }
 
 function shareResults(){
   if(!lastResults.length) return;
-<<<<<<< HEAD
-  const skills=lastChosen.join(', ');
-  const lines=lastResults.map((r,i)=>`${i+1}. ${r.title}\n   ${r.why_match||r.tagline}\n   Salary: ${r.salary_range}`);
-  const text=`My Caribbean Career Compass Results 🌴\n\nSkills I picked: ${skills}\n\n${lines.join('\n\n')}\n\nFind your path at Caribbean Career Compass 🧭`;
-  if(navigator.clipboard){
-    navigator.clipboard.writeText(text).then(()=>showToast('✓ Copied to clipboard!')).catch(()=>showToast('Could not copy — try selecting manually.'));
-  } else {
-    showToast('Clipboard not available in this browser.');
-  }
-}
-
-function showToast(msg){
-  const t=document.getElementById('share-toast');
-  t.textContent=msg;
-  setTimeout(()=>{t.textContent='';},3500);
-}
-
-buildGrid();
-</script>
-
-</body>
-</html>
-=======
   const lines=lastResults.map((r,i)=>`${i+1}. ${r.title}\n   ${r.why_match}\n   Salary: ${r.salary_range}`);
   const text=`My Caribbean Career Compass Results\n\nThemes: ${lastThemes.join(' + ')}\n\n${lines.join('\n\n')}\n\nCaribbean Career Compass — STEAM Edition`;
   if(navigator.clipboard) navigator.clipboard.writeText(text).then(()=>showToast('Copied!')).catch(()=>showToast('Could not copy.'));
@@ -593,4 +347,3 @@ function showToast(msg){const t=document.getElementById('share-toast');t.textCon
 
 buildGrid();
 </script>
->>>>>>> gh-pages
